@@ -1,10 +1,19 @@
 const getters = {
-    sidebar: state => state.app.sidebar,
-    language: state => state.app.language,
-    size: state => state.app.size,
-    device: state => state.app.device,
-    showFooter: state => state.state.showFooter,
-    changableNum: state => state.state.changableNum,
+  sidebar: state => state.app.sidebar,
+  language: state => state.app.language,
+  size: state => state.app.size,
+  device: state => state.app.device,
+  token: state => state.user.token,
+  avatar: state => state.user.avatar,
+  name: state => state.user.name,
+  introduction: state => state.user.introduction,
+  status: state => state.user.status,
+  roles: state => state.user.roles,
+  perms: state => state.user.perms,
+  setting: state => state.user.setting,
+  showFooter: state => state.state.showFooter,
+  changableNum: state => state.state.changableNum
+
 
 }
 export default getters
