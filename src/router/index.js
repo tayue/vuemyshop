@@ -6,9 +6,11 @@ import Login from '@/views/login/index'
 import Redirect from '@/views/redirect/index'
 import AutoRedirect from '@/views/login/authredirect'
 import Dashboard from '@/views/dashboard/index'
+import UserManager from '@/views/user/user'
+
 Vue.use(Router)
 
-var routes = [
+export const routes = [
   {
     path: '/login',
     component: Login
@@ -49,6 +51,42 @@ var routes = [
     ]
   }
 ]
+export const asyncRouterMap=[
+  {
+    path: '/user',
+    component: Layout,
+    redirect: 'noredirect',
+    alwaysShow: true,
+    name: 'userManage',
+    meta: {
+      title: '用户管理',
+      icon: 'chart'
+    },
+    children: [
+      {
+        path: 'user',
+        component: UserManager,
+        name: 'user',
+        meta: {
+          perms: ['GET /admin/user/list'],
+          title: '会员管理',
+          noCache: true
+        }
+      },
+      // {
+      //   path: 'address',
+      //   component: UserAddress,
+      //   name: 'address',
+      //   meta: {
+      //     perms: ['GET /admin/address/list'],
+      //     title: '收货地址',
+      //     noCache: true
+      //   }
+      // }
+    ]
+  }
+]
+export const constantRouterMap=[]
 
 // 将路径注入到Router中
 var router = new Router({

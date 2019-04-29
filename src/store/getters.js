@@ -12,8 +12,11 @@ const getters = {
   perms: state => state.user.perms,
   setting: state => state.user.setting,
   showFooter: state => state.state.showFooter,
-  changableNum: state => state.state.changableNum
-
+  changableNum: state => state.state.changableNum,
+  permission_routers: state => state.permission.routers,
+  addRouters: state => state.permission.addRouters,
+  visitedViews: state => state.tagsView.visitedViews,
+  cachedViews: state => state.tagsView.cachedViews,
 
 }
 export default getters
