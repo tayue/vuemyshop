@@ -2,12 +2,16 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 import Cookies from 'js-cookie'
 import router from './router'
 import ElementUI from 'element-ui'  //手动变红
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
-import store from "./store";   //手动变红
+import store from './store'   //手动变红
 import './icons' // icon
+import 'element-ui/lib/theme-chalk/index.css'
+
+import '@/styles/index.scss' // global css
 import './permission' // permission control
 import i18n from './lang' // Internationalization
 

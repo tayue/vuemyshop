@@ -7,7 +7,7 @@ import Redirect from '@/views/redirect/index'
 import AutoRedirect from '@/views/login/authredirect'
 import Dashboard from '@/views/dashboard/index'
 import UserManager from '@/views/user/user'
-
+import UserAddress from '@/views/user/address'
 Vue.use(Router)
 
 export const routes = [
@@ -73,16 +73,16 @@ export const asyncRouterMap=[
           noCache: true
         }
       },
-      // {
-      //   path: 'address',
-      //   component: UserAddress,
-      //   name: 'address',
-      //   meta: {
-      //     perms: ['GET /admin/address/list'],
-      //     title: '收货地址',
-      //     noCache: true
-      //   }
-      // }
+      {
+        path: 'address',
+        component: UserAddress,
+        name: 'address',
+        meta: {
+          perms: ['GET /admin/address/list'],
+          title: '收货地址',
+          noCache: true
+        }
+      }
     ]
   }
 ]
