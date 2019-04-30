@@ -68,7 +68,7 @@ export const asyncRouterMap=[
         component: UserManager,
         name: 'user',
         meta: {
-          perms: ['GET /admin/user/list'],
+          perms: ['GET /api/user/list', 'POST /api/user/create', 'POST /api/user/update', 'POST /api/user/delete'],
           title: '会员管理',
           noCache: true
         }
@@ -78,7 +78,7 @@ export const asyncRouterMap=[
         component: UserAddress,
         name: 'address',
         meta: {
-          perms: ['GET /admin/address/list'],
+          perms: ['GET /api/address/list'],
           title: '收货地址',
           noCache: true
         }

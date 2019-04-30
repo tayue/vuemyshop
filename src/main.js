@@ -10,16 +10,22 @@ import '../node_modules/element-ui/lib/theme-chalk/index.css'
 import store from './store'   //手动变红
 import './icons' // icon
 import 'element-ui/lib/theme-chalk/index.css'
-
+import permission from '@/directive/permission/index.js' // 权限判断指令
 import '@/styles/index.scss' // global css
 import './permission' // permission control
 import i18n from './lang' // Internationalization
+import * as filters from './filters' // global filters
+
+// register global utility filters.
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 
-Vue.use(ElementUI)  //手动变红
+Vue.directive('permission', permission)
 
 Vue.use(ElementUI, {
   size: Cookies.get('size') || 'medium', // set element-ui default size

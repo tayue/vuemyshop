@@ -23,6 +23,8 @@ function filterAsyncRouter(routes, perms) {
 
   routes.forEach(route => {
     const tmp = { ...route }
+    console.log(routes);
+    console.log(tmp);
     if (tmp.children) {
       tmp.children = filterAsyncRouter(tmp.children, perms)
       if (tmp.children && tmp.children.length > 0) {
